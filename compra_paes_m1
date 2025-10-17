@@ -100,7 +100,7 @@
 
 <script>
 // ======= CONFIGURA AQUÍ =======
-const MPAGO_LINK = "https://mpago.la/TU-LINK-DE-PAGO";     // <- reemplaza por tu link real
+const MPAGO_LINK = "https://mpago.la/2dZQSP1";     // <- reemplaza por tu link real
 // La redirección post-pago se define dentro de Mercado Pago (Back URL). Sugerencia: apunta a tu gracias.html
 // ==============================
 
