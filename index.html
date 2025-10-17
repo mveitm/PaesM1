@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gracias por tu compra - Guía PAES M1</title>
+<style>
+body { font-family: Cambria, serif; background: #e6f4f5; text-align: center; padding: 40px; color:#123; }
+.container { background: white; padding: 30px; max-width: 520px; margin: auto; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.logo { width: 70px; height: 70px; border-radius: 20px; background: linear-gradient(135deg, #1e88a8, #38b2c5); display:flex; align-items:center; justify-content:center; color:white; font-size:28px; font-weight:700; margin:0 auto 20px; }
+h1 { color: #1e88a8; }
+button { background: #1e88a8; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; margin-top: 20px; font-size: 16px; }
+button:disabled { background: gray; cursor: not-allowed; }
+a { color:#1e88a8; font-weight: bold; text-decoration:none; }
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">VP</div>
+  <h1>¡Gracias por tu compra!</h1>
+  <p>Tu pago fue recibido correctamente.</p>
+  <p>Haz clic en el botón para descargar tu <strong>Guía PAES Matemáticas M1 (PDF)</strong>.</p>
+  <button id="btnDescargar" onclick="descargar()">Descargar guía</button>
+  <p id="mensaje"></p>
+  <hr>
+  <p>📩 Si tienes algún problema, escríbenos a:<br>
+  <a href="mailto:contacto.veitman@gmail.com">contacto.veitman@gmail.com</a></p>
+</div>
+
+<script>
+// Cambia esta URL por el enlace al PDF que subirás al repositorio
+const PDF_URL = "Guia_PAES_M1.pdf";
+
+function descargar(){
+  const usado = sessionStorage.getItem("descarga_usada");
+  const btn = document.getElementById('btnDescargar');
+  const mensaje = document.getElementById('mensaje');
+
+  if(usado){
+    mensaje.innerHTML = "⚠️ Este enlace ya fue utilizado en esta sesión.";
+    btn.disabled = true;
+    return;
+  }
+
+  // Registrar uso
+  sessionStorage.setItem("descarga_usada", "true");
+  mensaje.innerHTML = "✅ Descarga iniciada. Gracias por tu compra.";
+  btn.disabled = true;
+
+  // Redirigir al PDF
+  window.location.href = PDF_URL;
+}
+</script>
+</body>
+</html>
 
