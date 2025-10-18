@@ -49,7 +49,12 @@ function descargar(){
   btn.disabled = true;
 
   // Redirigir al PDF
-  window.location.href = PDF_URL;
+  const enlace = document.createElement("a");
+  enlace.href = PDF_URL;
+  enlace.download = PDF_URL.split('/').pop(); // nombre del archivo
+  document.body.appendChild(enlace);
+  enlace.click();
+  document.body.removeChild(enlace);
 }
 </script>
 </body>
